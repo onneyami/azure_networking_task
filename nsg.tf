@@ -17,6 +17,6 @@ resource "azurerm_network_security_group" "app_vnet_nsg" {
 }
 
 resource "azurerm_subnet_network_security_group_association" "backend_nsg" {
-  subnet_id                 = azurerm_subnet.backend.id
+  subnet_id                 = data.azurerm_subnet.backend.id
   network_security_group_id = azurerm_network_security_group.app_vnet_nsg.id
 }

@@ -11,7 +11,7 @@ resource "azurerm_route_table" "app_vnet_firewall_rt" {
   name                          = "app-vnet-firewall-rt"
   location                      = data.azurerm_resource_group.rg.location
   resource_group_name           = data.azurerm_resource_group.rg.name
-  disable_bgp_route_propagation = false
+  bgp_route_propagation_enabled = true
 
   route {
     name                   = "outbound-firewall"
